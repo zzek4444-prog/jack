@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>재혁의 작은 페이지</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f8f4ec;
+      color: #473d32;
+      font-family: "Pretendard", "Noto Sans KR",
+                   -apple-system, sans-serif;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 7%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: auto;
+    }
+
+    .logo {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #a47c57;
+    }
+
+    .nav {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #958575;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 5%;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 0;
+    }
+
+    .intro {
+      max-width: 540px;
+    }
+
+    .eyebrow {
+      color: #a47c57;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 4.5vw, 64px);
+      line-height: 1.35;
+      letter-spacing: -2.5px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: #b28b64;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 2;
+      color: #827465;
+      word-break: keep-all;
+      margin-bottom: 32px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      border: 1px solid #e4d9c9;
+      border-radius: 30px;
+      color: #85715b;
+      font-size: 12px;
+      background: #fcfaf6;
+    }
+
+    .character {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 420px;
+      background: #eee5d7;
+      border-radius: 48% 48% 42% 42%;
+      overflow: hidden;
+    }
+
+    .character::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: #f6efe3;
+      top: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .bear {
+      position: relative;
+      width: min(90%, 350px);
+      z-index: 1;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      color: #9b856e;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e8dfd2;
+      padding-top: 22px;
+      color: #a09282;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 24px 6%;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 50px 0 40px;
+      }
+
+      .intro {
+        order: 1;
+      }
+
+      .character {
+        order: 0;
+        min-height: 310px;
+      }
+
+      .character::before {
+        width: 250px;
+        height: 250px;
+        top: 25px;
+      }
+
+      .bear {
+        width: 260px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .nav {
+        font-size: 10px;
+      }
+
+      footer {
+        gap: 12px;
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div class="logo">재혁<span>.</span></div>
+      <div class="nav">A LITTLE ABOUT ME</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">HELLO, I'M JAEHYUK</p>
+
+        <h1>
+          따뜻한 마음으로,<br />
+          <span>나답게 살아가는</span><br />
+          사람.
+        </h1>
+
+        <p class="description">
+          안녕하세요, 재혁입니다.<br />
+          맡은 일에는 책임을 다하고,<br />
+          일상에서는 작은 행복을 발견하며 살아갑니다.<br />
+          좋아하는 것들을 가까이 두고<br />
+          소중한 사람들과 함께 성장하고 싶습니다.
+        </p>
+
+        <div class="tags">
+          <span class="tag">🏃 러닝</span>
+          <span class="tag">🐶 강아지</span>
+          <span class="tag">🌿 제주</span>
+          <span class="tag">☕ 소소한 일상</span>
+        </div>
+      </section>
+
+      <section class="character">
+
+        <!-- 직접 그린 곰 캐릭터 일러스트 -->
+        <svg class="bear" viewBox="0 0 360 400"
+             xmlns="http://www.w3.org/2000/svg">
+
+          <!-- 귀 -->
+          <circle cx="95" cy="90" r="47" fill="#9B7252"/>
+          <circle cx="265" cy="90" r="47" fill="#9B7252"/>
+          <circle cx="95" cy="90" r="25" fill="#D6B49A"/>
+          <circle cx="265" cy="90" r="25" fill="#D6B49A"/>
+
+          <!-- 머리 -->
+          <ellipse cx="180" cy="170" rx="126" ry="117"
+                   fill="#B98E68"/>
+
+          <!-- 얼굴 -->
+          <ellipse cx="180" cy="205" rx="82" ry="65"
+                   fill="#EAD5B9"/>
+
+          <!-- 눈 -->
+          <circle cx="140" cy="165" r="7" fill="#47372B"/>
+          <circle cx="220" cy="165" r="7" fill="#47372B"/>
+
+          <!-- 볼 -->
+          <ellipse cx="115" cy="204" rx="19" ry="11"
+                   fill="#DDAA9B" opacity="0.7"/>
+          <ellipse cx="245" cy="204" rx="19" ry="11"
+                   fill="#DDAA9B" opacity="0.7"/>
+
+          <!-- 코와 입 -->
+          <ellipse cx="180" cy="196" rx="13" ry="9"
+                   fill="#47372B"/>
+          <path d="M180 205 Q180 224 164 221
+                   M180 205 Q180 224 196 221"
+                fill="none" stroke="#47372B"
+                stroke-width="4" stroke-linecap="round"/>
+
+          <!-- 몸통 -->
+          <path d="M93 275 Q180 245 267 275
+                   L290 370 Q180 395 70 370 Z"
+                fill="#B98E68"/>
+
+          <!-- 배 -->
+          <ellipse cx="180" cy="330" rx="57" ry="47"
+                   fill="#EAD5B9"/>
+
+          <!-- 팔 -->
+          <ellipse cx="80" cy="310" rx="26" ry="61"
+                   transform="rotate(25 80 310)"
+                   fill="#B98E68"/>
+          <ellipse cx="280" cy="310" rx="26" ry="61"
+                   transform="rotate(-25 280 310)"
+                   fill="#B98E68"/>
+
+          <!-- 발 -->
+          <ellipse cx="128" cy="375" rx="49" ry="23"
+                   fill="#8F674B"/>
+          <ellipse cx="232" cy="375" rx="49" ry="23"
+                   fill="#8F674B"/>
+
+          <!-- 목도리 -->
+          <path d="M104 264 Q180 291 256 264
+                   L249 284 Q180 310 111 284 Z"
+                fill="#C98268"/>
+          <path d="M224 282 L242 340 L263 333 L255 278 Z"
+                fill="#C98268"/>
+
+          <!-- 작은 하트 -->
+          <path d="M290 120
+                   C270 100 245 125 290 155
+                   C335 125 310 100 290 120Z"
+                fill="#D99C89"/>
+        </svg>
+
+        <div class="caption">A LIFE WITH WARMTH</div>
+      </section>
+    </main>
+
+    <footer>
+      <span>MADE WITH A LITTLE WARMTH</span>
+      <span>JEJU, KOREA · 2026</span>
+    </footer>
+
+  </div>
+</body>
+</html>
